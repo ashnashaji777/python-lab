@@ -1,0 +1,11 @@
+n1=int(input("enter the length of the square:"))
+squarearea=lambda x:x*x
+print("area=",squarearea(n1))
+n2=int(input("enter the length of the rectangle:"))
+n3=int(input("enter the breadth of the rectangle:"))
+rectarea=lambda a,b:a*b
+print("area=",rectarea(n2,n3))
+n4=int(input("enter the base of the triangle:"))
+n5=int(input("enter the height of the triangle:"))
+trianglearea=lambda x,y:0.5*x*y
+print("area=",trianglearea(n4,n5))
