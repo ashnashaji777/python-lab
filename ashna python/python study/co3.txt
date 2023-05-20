@@ -1,0 +1,215 @@
+here's a possible algorithm for the given Java code:
+co3 2
+Start the program.
+Create a class Employee with attributes empid, name, salary, and address.
+Create a class Teacher that extends Employee and has additional attributes department and subject.
+Define a display() method in the Teacher class that prints the details of a teacher.
+Define the main() method in the program2 class.
+Create a Scanner object to read user input.
+Prompt the user to enter the number of teachers (n).
+Create an array of Teacher objects with size n.
+Use a for loop to iterate over the array and prompt the user to enter the details of each teacher.
+For each teacher, read the empid, name, salary, address, department, and subject using the Scanner object, and create a new Teacher object with these values.
+Store the new Teacher object in the array.
+Use another for loop to iterate over the array and call the display() method for each teacher.
+End the program.
+
+3
+Start the program.
+Create a class called 'Person' with variables 'name', 'gender', 'address', 'age'.
+Create a parameterized constructor with parameters 'name', 'gender', 'address', 'age'.
+Create a class called 'Employee1' that extends 'Person' with variables 'empid', 'cname', 'quali', 'salary'.
+Create a parameterized constructor with parameters 'name', 'gender', 'address', 'age', 'empid', 'cname', 'quali', 'salary'.
+Create a class called 'Teacher1' that extends 'Employee1' with variables 'subject', 'department', 'tid'.
+Create a parameterized constructor with parameters 'name', 'gender', 'address', 'age', 'empid', 'cname', 'quali', 'salary', 'subject', 'department', 'tid'.
+Create a display method to display the details of the teacher.
+Create a class called 'program3'.
+Create an object of the 'Scanner' class to take user input.
+Ask the user to enter the number of teachers.
+Create an array of objects of the 'Teacher1' class with size equal to the number of teachers.
+Create a loop to take input for each teacher and store it in the array of objects.
+Create another loop to display the details of each teacher.
+End the program.
+
+
+package co3;
+
+import java.util.*;
+class Employee{
+	int empid;
+	String name;
+	int salary;
+	String address;
+	Employee (int empid,String name,int salary,String address){
+		this.empid=empid;
+		this.name=name;
+		this.salary=salary;
+		this.address=address;
+		
+	}
+}
+class Teacher extends Employee{
+	String department;
+	String subject;
+	Teacher (int empid,String name,int salary,String address,String department, String subject){
+		super(empid, name, salary, address);
+		this.department=department;
+		this.subject=subject;
+		
+	}
+	public void display(){
+        System.out.println("Teacher");
+      	 System.out.println("empid:"+ empid);
+      	 System.out.println("name:"+name);
+      	 System.out.println("salary:"+salary);
+      	 System.out.println("address:"+address);
+      	 System.out.println("subject taught:"+subject);
+      	 
+       }
+}
+public class program2 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter the number of teachers");
+        int n = sc.nextInt();
+        sc.nextLine();
+        Teacher[] tre = new Teacher[n];
+        for(int i=0;i<n;i++){
+	        System.out.println("enter the details of teacher"+(i+1));
+	        System.out.println("enter the empid:");
+	        int empid=sc.nextInt();
+	        System.out.println("enter the name:");
+	        String name=sc.next();
+	        System.out.println("enter the salary:");
+	        int salary=sc.nextInt();
+	        System.out.println("enter the address:");
+	        String address=sc.next();
+	        System.out.println("enter the department:");
+	        String department=sc.next();
+	        System.out.println("enter the sbjecttaught:");
+	        String subject=sc.next();
+	        
+	        
+	        tre[i]=new Teacher(empid,name,salary,address,department,subject);
+        
+        }
+        System.out.println("details of the teacher");
+        for(int i=0;i<n;i++)
+        {
+        	tre[i].display();
+        	 
+        	
+        }
+        
+	}
+
+}
+
+
+
+package co3;
+import java.util.*;
+class Person{
+	String name;
+	String gender;
+	String address;
+	int age;
+	public Person(String name,String gender,String address,int age){
+		this.name=name;
+		this.gender=gender;
+		this.address=address;
+		this.age=age;
+		
+	}
+}
+class Employee1 extends Person{
+	int empid;
+	String cname;
+	String quali;
+	int salary;
+	public Employee1(String name,String gender,String address,int age,int empid,String cname,String quali,int salary){
+		super(name,gender,address,age);
+		this.empid=empid;
+		this.cname=cname;
+		this.quali=quali;
+		this.salary=salary;
+	}
+	
+}
+class Teacher1 extends Employee1{
+	String subject;
+	String department;
+	int tid;
+	public Teacher1(String name,String gender,String address,int age,int empid,String cname,String quali,int salary,String subject,String department,int tid){
+		super(name,gender,address,age,empid,cname,quali,salary);
+		this.subject=subject;
+		this.department=department;
+		this.tid=tid;
+		
+		
+	}
+	public void display() {
+		System.out.println("teacher id:"+tid);
+		System.out.println("department:"+department);
+		System.out.println("subject:"+subject);
+		System.out.println("employee id:"+empid);
+		System.out.println("company name:"+cname);
+		System.out.println("qualification:"+quali);
+		System.out.println("salary:"+salary);
+		System.out.println("employeename:"+name);
+		System.out.println("gender:"+gender);
+		System.out.println("address:"+address);
+		System.out.println("age:"+age);
+	}
+}
+
+
+
+public class program3 {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number of teache:");
+		int n=sc.nextInt();
+		Teacher1[]tr= new Teacher1[n];
+		for(int i=0;i<n;i++){
+			System.out.println("enter the details of teacher"+(i+1));
+			System.out.println("enter the teacherid:");
+			int tid=sc.nextInt();
+			System.out.println("enter the department:");
+			String department=sc.next();
+			System.out.println("enter the subject:");
+			String subject=sc.next();
+			System.out.println("enter the empid:");
+			int empid=sc.nextInt();
+			System.out.println("enter the companyname:");
+			String cname=sc.next();
+			System.out.println("enter the qualification:");
+			String quali=sc.next();
+			System.out.println("enter the salary:");
+			int salary=sc.nextInt();
+			System.out.println("enter the name:");
+			String name=sc.next();
+			System.out.println("enter the gender:");
+			String gender=sc.next();
+			System.out.println("enter the address:");
+			String address=sc.next();
+			System.out.println("enter the age:");
+			int age=sc.nextInt();
+			tr[i]= new Teacher1(name,gender,address,age,empid,cname,quali,salary,subject,department,tid);
+			
+			
+			
+			
+			
+		}
+		for(int i=0;i<n;i++) {
+			tr[i].display();
+		}
+		
+		
+	}
+
+}
+
